@@ -1,0 +1,101 @@
+{
+  "overlappingPairs": [
+    [
+      { "startTime": "12/30/2017 04:00", "endTime": "12/30/2017 05:00" },
+      { "startTime": "12/30/2017 04:00", "endTime": "12/30/2017 05:00" },
+      { "type:": "same", "overlap": true }
+    ],
+    [
+      { "startTime": "12/30/2017 04:00", "endTime": "12/30/2017 05:00" },
+      { "startTime": "12/30/2017 00:00", "endTime": "12/30/2017 06:00" },
+      { "type:": "unbounded", "overlap": true }
+    ],
+    [
+      { "startTime": "12/30/2017 04:00", "endTime": "12/30/2017 05:00" },
+      { "startTime": "12/30/2017 04:30", "endTime": "12/30/2017 04:45" },
+      { "type:": "bounded", "overlap": true }
+    ],
+    [
+      { "startTime": "02/29/2016 00:00", "endTime": "02/29/2016 05:00" },
+      { "startTime": "02/28/2016 11:30", "endTime": "02/29/2016 03:30" },
+      { "type:": "leap", "overlap": true }
+    ]
+  ],
+  "nonOverlappingPairs": [
+    [
+      { "startTime": "12/30/2017 04:00", "endTime": "12/30/2017 05:00" },
+      { "startTime": "12/30/2018 05:00", "endTime": "12/30/2018 05:30" },
+      { "type:": "sameStartEnd", "overlap": false }
+    ],
+    [
+      { "startTime": "12/30/2017 04:00", "endTime": "12/30/2017 05:00" },
+      { "startTime": "12/30/2018 04:00", "endTime": "12/30/2018 05:00" },
+      { "type:": "year", "overlap": false }
+    ],
+    [
+      { "startTime": "12/30/2017 04:00", "endTime": "12/30/2017 05:00" },
+      { "startTime": "12/30/2017 05:00:00:001", "endTime": "12/30/2017 05:10" },
+      { "type:": "milli", "overlap": false }
+    ],
+    [
+      { "startTime": "12/30/2017 04:00", "endTime": "12/30/2017 05:00" },
+      {
+        "startTime": "12/30/2017 03:59:00:900",
+        "endTime": "12/30/2017 03:59:00:999"
+      },
+      { "type:": "milli", "overlap": false }
+    ],
+    [
+      { "startTime": "12/30/2017 04:00", "endTime": "12/30/2017 05:00" },
+      { "startTime": "12/30/2017 05:00:01", "endTime": "12/30/2017 05:10" },
+      { "type:": "second", "overlap": false }
+    ],
+    [
+      { "startTime": "12/30/2017 04:00", "endTime": "12/30/2017 05:00" },
+      { "startTime": "12/30/2017 03:50", "endTime": "12/30/2017 03:59:59" },
+      { "type:": "second", "overlap": false }
+    ],
+    [
+      { "startTime": "12/30/2017 04:00", "endTime": "12/30/2017 05:00" },
+      { "startTime": "12/30/2017 03:50", "endTime": "12/30/2017 03:59" },
+      { "type:": "minute", "overlap": false }
+    ],
+    [
+      { "startTime": "12/30/2017 04:00", "endTime": "12/30/2017 05:00" },
+      { "startTime": "12/30/2017 05:01", "endTime": "12/30/2017 05:15" },
+      { "type:": "minute", "overlap": false }
+    ],
+    [
+      { "startTime": "02/29/2016 00:00", "endTime": "02/29/2016 05:00" },
+      { "startTime": "02/29/2016 05:01", "endTime": "02/29/2016 05:15" },
+      { "type:": "leap", "overlap": false }
+    ]
+  ],
+  "calendarEvents1": [
+    {
+      "id": "1",
+      "startTime": "12/29/2017 00:00",
+      "endTime": "12/29/2017 06:00"
+    },
+    {
+      "id": "2",
+      "startTime": "12/29/2017 05:00",
+      "endTime": "12/29/2017 05:30"
+    },
+    {
+      "id": "3",
+      "startTime": "12/29/2017 05:15",
+      "endTime": "12/29/2017 06:00"
+    },
+    {
+      "id": "4",
+      "startTime": "12/29/2017 06:00",
+      "endTime": "12/29/2017 06:30"
+    },
+    {
+      "id": "5",
+      "startTime": "12/29/2017 12:00",
+      "endTime": "12/30/2017 12:30"
+    }
+  ]
+}
