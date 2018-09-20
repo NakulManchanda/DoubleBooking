@@ -79,7 +79,7 @@ describe("test all calendar related operations", function() {
       expect(overlappingPairs.length).to.be.equal(3);
     });
 
-    it("cal events - no overlap 2", function() {
+    it("cal events - no overlap", function() {
       let cal = new Calendar();
       const calEventsArr2 = loadCalendarEvents(calendarEvents2);
       cal.addEvents(calEventsArr2);
@@ -87,7 +87,7 @@ describe("test all calendar related operations", function() {
       expect(overlappingPairs.length).to.be.equal(0);
     });
 
-    it("cal events - no overlap 3", function() {
+    it("cal events - overlap", function() {
       let cal = new Calendar();
       const calEventsArr3 = loadCalendarEvents(testCases.calendarEvents3);
       cal.addEvents(calEventsArr3);
