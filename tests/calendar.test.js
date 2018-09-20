@@ -92,7 +92,7 @@ describe("test all calendar related operations", function() {
       const calEventsArr3 = loadCalendarEvents(testCases.calendarEvents3);
       cal.addEvents(calEventsArr3);
       let overlappingPairs = cal.allOverlapping();
-      expect(overlappingPairs.length).to.be.equal(9);
+      expect(overlappingPairs.length).to.be.equal(19);
     });
   });
 });

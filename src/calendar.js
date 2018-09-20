@@ -12,7 +12,7 @@ class Calendar {
   }
 
   allOverlapping() {
-    let allEvents = this.events.sort((x, y) => x - y);
+    let allEvents = this.events.sort((x, y) => x.startTime - y.startTime);
 
     let overlapping = [];
     for (let i = 0; i < allEvents.length; i++) {
