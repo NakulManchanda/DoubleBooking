@@ -3,22 +3,15 @@ const chai = require("chai"),
   expect = chai.expect,
   should = chai.should();
 
-const chaiExclude = require('chai-exclude'); 
+const chaiExclude = require("chai-exclude");
 chai.use(chaiExclude);
 
 const Event = require("../src/event");
 const Calendar = require("../src/calendar");
+
+const { loadCalendarEvents } = require("./utility");
 const testCases = require("./testCases");
 const { calendarEvents1, calendarEvents2 } = testCases;
-
-const loadCalendarEvents = function(calEvents) {
-  let evtArr = [];
-  for (let i = 0; i < calEvents.length; i++) {
-    let slot = calEvents[i];
-    evtArr.push(new Event(new Date(slot.startTime), new Date(slot.endTime)));
-  }
-  return evtArr;
-};
 
 const calEventsArr1 = loadCalendarEvents(calendarEvents1);
 
@@ -33,7 +26,9 @@ describe("test all calendar related operations", function() {
     let cal = new Calendar();
     cal.addEvent(calEventsArr1[0]);
     expect(cal.events.length).to.be.equal(1);
-    expect(cal.events[0]).excluding('uuid').to.be.deep.equal(calEventsArr1[0]);
+    expect(cal.events[0])
+      .excluding("uuid")
+      .to.be.deep.equal(calEventsArr1[0]);
   });
 
   it("add multiple events at once", function() {
@@ -48,13 +43,17 @@ describe("test all calendar related operations", function() {
     let cal = new Calendar();
     cal.addEvent(calEventsArr1[0]);
     expect(cal.events.length).to.be.equal(1);
-    expect(cal.events[0]).excluding('uuid').to.be.deep.equal(calEventsArr1[0]);
+    expect(cal.events[0])
+      .excluding("uuid")
+      .to.be.deep.equal(calEventsArr1[0]);
     cal.addEvents(calEventsArr1);
 
     let allEvents = [cal.events[0]];
     allEvents = [...allEvents, ...calEventsArr1];
     expect(cal.events.length).to.be.equal(allEvents.length);
-    expect(cal.events).excludingEvery('uuid').to.be.deep.equal(allEvents);
+    expect(cal.events)
+      .excludingEvery("uuid")
+      .to.be.deep.equal(allEvents);
   });
 
   describe("overlapping events", function() {

@@ -1,3 +1,5 @@
+const Event = require('../src/event');
+
 let timeSlots = (function() {
   let dates = ["12/30/2017", "12/31/2017", "01/01/2018", "01/02/2018"];
   let timeSlots = [];
@@ -52,6 +54,17 @@ function randomEvent(evt, type = "overlap") {
   };
 }
 
+
+const loadCalendarEvents = function(calEvents) {
+  let evtArr = [];
+  for (let i = 0; i < calEvents.length; i++) {
+    let slot = calEvents[i];
+    evtArr.push(new Event(new Date(slot.startTime), new Date(slot.endTime)));
+  }
+  return evtArr;
+};
+
 module.exports = {
-  randomEvent
+  randomEvent,
+  loadCalendarEvents
 };
